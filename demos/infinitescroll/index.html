@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="ionicApp">
+<head>
+  <link href="../../ionic/css/ionic.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <script src="../../ionic/js/ionic.bundle.js"></script>
+  <script src="index.js"></script>
+</head>
+
+  <body ng-controller="MyCtrl">
+
+    <header class="bar bar-header bar-positive">
+      <h1 class="title">Ionic Infinite Scroll with {{items.length}} items</h1>
+    </header>
+
+    <ion-content class="has-header">
+
+      <ion-list>
+
+        <ion-item ng-repeat="item in items"
+                  item="item"
+                  href="#/item/{{item.id}}">
+          Item {{ item.id }}
+        </ion-item>
+
+      </ion-list>
+
+      <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
+
+    </ion-content>
+
+  </body>
+</html>
