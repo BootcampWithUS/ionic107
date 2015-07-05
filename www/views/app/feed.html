@@ -1,7 +1,13 @@
-<ion-pane>
+<ion-view view-title="Feed">
   <ion-header-bar class="bar-positive">
-    <h1 class="title">Feed RSS  </h1>
+    <h1 class="title">Feed RSS</h1>
   </ion-header-bar>
-  <ion-content>
+  <ion-content ng-init="init()">
+    <div class="list">
+    <a class="item" href="{{story.link}}" target="_blank" ng-repeat="story in stories">
+    {{story.title}}
+    <p><span am-time-ago="story.publishedDate" am-preprocess="utc"></span></p>
+    </a>
+    </div>
   </ion-content>
-</ion-pane>
+</ion-view>
