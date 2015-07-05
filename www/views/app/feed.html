@@ -6,7 +6,7 @@
     <div class="list">
     <a class="item" href="{{story.link}}" target="_blank" ng-repeat="story in stories">
     {{story.title}}
-    <p><span am-time-ago="story.publishedDate" am-preprocess="utc"></span></p>
+    <p><span am-time-ago="story.publishedDate" am-preprocess="utc"></span> <span ng-if="story.categories[0]">- {{story.categories[0]}}</span></p>
     </a>
     </div>
   </ion-content>
