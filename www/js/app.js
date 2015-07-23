@@ -10,7 +10,7 @@ $stateProvider
     ;
 $urlRouterProvider.otherwise("/feed");
 })
-.constant('FURL', '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JSON_CALLBACK&q=http://feeds.feedburner.com/Sinergizar')
+.constant('FURL', 'http://blog.ionic.io/feed/')
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

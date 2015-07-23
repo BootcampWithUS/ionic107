@@ -4,7 +4,7 @@
   </ion-header-bar>
   <ion-content ng-init="init()">
     <div class="list">
-    <a class="item" href="{{story.link}}" target="_blank" ng-repeat="story in stories">
+    <a class="item" href="{{story.link}}" target="_blank" ng-click="window.open({{story.link}},'_blank','location=yes');" ng-repeat="story in stories">
     {{story.title}}
     <p><span am-time-ago="story.publishedDate" am-preprocess="utc"></span> <span ng-if="story.categories[0]">- {{story.categories[0]}}</span></p>
     </a>
